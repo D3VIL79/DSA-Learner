@@ -468,27 +468,15 @@
   }
 }
 
-/* Mobile landscape layout adjustments */
-@media (max-width: 1024px) and (orientation: landscape) {
-  .mobile-navbar {
-    height: 36px !important;
+/* Mobile-specific scrollbar */
+@media (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 3px;
   }
-  .mobile-controls {
-    height: 32px !important;
-  }
-  .mobile-explanation {
-    height: 36px !important;
-  }
-  .mobile-right-panel {
-    width: 240px !important;
-  }
-  .mobile-hide {
-    display: none !important;
+
+  .code-line {
+    padding: 1px 6px;
+    border-left-width: 2px;
   }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
-  .mobile-right-panel {
-    width: 200px !important;
-  }
-}

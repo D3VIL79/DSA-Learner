@@ -38,18 +38,18 @@ export const CodePanel: React.FC<CodePanelProps> = ({ algorithmId, progLanguage 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
       {/* Header badge */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
-        <span className="text-xs font-bold px-2 py-1 bg-primary-600/20 text-primary-400 rounded">
+      <div className="flex items-center justify-between px-3 py-1.5 border-b border-white/5 shrink-0">
+        <span className="text-[10px] font-bold px-2 py-0.5 bg-primary-600/20 text-primary-400 rounded">
           {codeData.language.toUpperCase()}
         </span>
-        <div className="flex gap-3 text-xs text-slate-400">
+        <div className="flex gap-2 text-[10px] text-slate-400">
           <span>Time: <strong className="text-accent-400">{codeData.time_complexity}</strong></span>
           <span>Space: <strong className="text-accent-400">{codeData.space_complexity}</strong></span>
         </div>
       </div>
 
       {/* Code lines */}
-      <div className="flex-1 overflow-y-auto p-2">
+      <div className="flex-1 overflow-y-auto overflow-x-auto p-1.5">
         {lines.map((line: string, idx: number) => {
           const isActive = activeLine === idx;
           const isExecuted = activeLine > idx;
@@ -60,10 +60,10 @@ export const CodePanel: React.FC<CodePanelProps> = ({ algorithmId, progLanguage 
                 isActive ? 'active' : isExecuted ? 'executed' : ''
               }`}
             >
-              <span className="w-8 min-w-[2rem] text-right pr-3 text-slate-600 select-none text-xs leading-6">
+              <span className="w-7 min-w-[1.75rem] text-right pr-2 text-slate-600 select-none text-[10px] leading-5">
                 {idx + 1}
               </span>
-              <pre className={`flex-1 text-sm leading-6 whitespace-pre ${
+              <pre className={`flex-1 text-xs leading-5 whitespace-pre ${
                 isActive ? 'text-white font-medium' : 'text-slate-300'
               }`}>
                 {line || ' '}
@@ -74,9 +74,9 @@ export const CodePanel: React.FC<CodePanelProps> = ({ algorithmId, progLanguage 
       </div>
 
       {/* Steps logic */}
-      <div className="border-t border-white/5 p-3">
-        <h4 className="text-xs text-slate-500 uppercase tracking-wider mb-2">Algorithm Steps</h4>
-        <ol className="list-decimal list-inside text-xs text-slate-400 space-y-0.5">
+      <div className="border-t border-white/5 px-3 py-2 shrink-0 max-h-[30%] overflow-y-auto">
+        <h4 className="text-[10px] text-slate-500 uppercase tracking-wider mb-1.5 font-bold">Algorithm Steps</h4>
+        <ol className="list-decimal list-inside text-[11px] text-slate-400 space-y-0.5 leading-relaxed">
           {codeData.steps_logic.map((step: string, idx: number) => (
             <li key={idx}>{step}</li>
           ))}
