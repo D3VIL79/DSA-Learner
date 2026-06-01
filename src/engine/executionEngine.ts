@@ -3,6 +3,7 @@ export interface ExecutionStep {
   i?: number;
   j?: number;
   index?: number;
+  secondaryIndex?: number;
   node?: number;
   value?: number;
   message?: string;
