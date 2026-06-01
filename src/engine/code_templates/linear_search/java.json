@@ -1,0 +1,14 @@
+{
+  "language": "java",
+  "code": "class LinearSearch {\n    int search(int arr[], int x) {\n        for (int i = 0; i < arr.length; i++)\n            if (arr[i] == x)\n                return i;\n        return -1;\n    }\n}",
+  "time_complexity": "O(n)",
+  "space_complexity": "O(1)",
+  "best_case": "O(1)",
+  "worst_case": "O(n)",
+  "average_case": "O(n)",
+  "steps_logic": [
+    "Start from first element",
+    "Compare with target",
+    "Move to next if not found"
+  ]
+}

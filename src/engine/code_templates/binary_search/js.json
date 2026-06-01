@@ -1,0 +1,11 @@
+{
+  "language": "js",
+  "code": "function binarySearch(arr, x) {\n    let l = 0, r = arr.length - 1;\n    while (l <= r) {\n        let m = Math.floor((l + r) / 2);\n        if (arr[m] === x) return m;\n        if (arr[m] < x) l = m + 1;\n        else r = m - 1;\n    }\n    return -1;\n}",
+  "time_complexity": "O(log n)",
+  "space_complexity": "O(1)",
+  "steps_logic": [
+    "Find middle element",
+    "Compare with target",
+    "Narrow search space"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "language": "python",
+  "code": "function inorder(node) {\n  if (node === null) return;\n  inorder(node.left);\n  console.log(node.value);\n  inorder(node.right);\n}",
+  "time_complexity": "O(N)",
+  "space_complexity": "O(H)",
+  "steps_logic": []
+}

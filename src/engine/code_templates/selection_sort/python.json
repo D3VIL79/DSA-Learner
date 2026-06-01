@@ -1,0 +1,14 @@
+{
+  "language": "python",
+  "code": "def selection_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        min_idx = i\n        for j in range(i+1, n):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr",
+  "time_complexity": "O(n^2)",
+  "space_complexity": "O(1)",
+  "best_case": "O(n^2)",
+  "worst_case": "O(n^2)",
+  "average_case": "O(n^2)",
+  "steps_logic": [
+    "Find minimum in unsorted region",
+    "Swap with first unsorted element",
+    "Advance sorted boundary"
+  ]
+}

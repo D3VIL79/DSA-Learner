@@ -1,0 +1,7 @@
+{
+  "language": "python",
+  "code": "function countingSort(arr) {\n  if (arr.length === 0) return arr;\n  let max = Math.max(...arr);\n  let count = new Array(max + 1).fill(0);\n  \n  for (let i = 0; i < arr.length; i++) {\n    count[arr[i]]++;\n  }\n  \n  let sortedIndex = 0;\n  for (let i = 0; i <= max; i++) {\n    while (count[i] > 0) {\n      arr[sortedIndex] = i;\n      sortedIndex++;\n      count[i]--;\n    }\n  }\n  return arr;\n}",
+  "time_complexity": "O(N + K)",
+  "space_complexity": "O(K)",
+  "steps_logic": []
+}

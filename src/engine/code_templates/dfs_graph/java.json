@@ -1,0 +1,11 @@
+{
+  "language": "java",
+  "code": "void DFSUtil(int v, boolean visited[], LinkedList<Integer> adj[]) {\n    visited[v] = true;\n    Iterator<Integer> i = adj[v].listIterator();\n    while (i.hasNext()) {\n        int n = i.next();\n        if (!visited[n])\n            DFSUtil(n, visited, adj);\n    }\n}",
+  "time_complexity": "O(V + E)",
+  "space_complexity": "O(V)",
+  "steps_logic": [
+    "Visit current node",
+    "Mark as visited",
+    "Recursively visit unvisited neighbors"
+  ]
+}

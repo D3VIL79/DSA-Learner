@@ -1,0 +1,441 @@
+@import "tailwindcss";
+
+/* ========================================
+   DSA QUEST — Design System
+   ======================================== */
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Dark palette */
+  --color-dark-950: #020617;
+  --color-dark-900: #0a0f1e;
+  --color-dark-800: #111827;
+  --color-dark-700: #1e293b;
+  --color-dark-600: #334155;
+  --color-dark-500: #475569;
+
+  /* Primary (Indigo-Violet) */
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+
+  /* Accent (Cyan-Teal) */
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+
+  /* Success */
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+
+  /* Warning */
+  --color-warning-400: #facc15;
+  --color-warning-500: #eab308;
+
+  /* Danger */
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+
+  /* Visualization colors */
+  --color-viz-active: #facc15;
+  --color-viz-compare: #60a5fa;
+  --color-viz-swap: #f87171;
+  --color-viz-sorted: #4ade80;
+  --color-viz-default: #6366f1;
+  --color-viz-visited: #c084fc;
+  --color-viz-current: #22d3ee;
+  --color-viz-queued: #fbbf24;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-dark-950 text-slate-100 font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.4);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-dark-900);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-dark-600);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-500);
+  }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+@layer utilities {
+  .glass {
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+  }
+
+  .glass-strong {
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3),
+                0 0 60px rgba(99, 102, 241, 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3),
+                0 0 60px rgba(34, 211, 238, 0.1);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.3),
+                0 0 60px rgba(74, 222, 128, 0.1);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary-400), var(--color-accent-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-glow {
+    border-image: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-500)) 1;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .animate-bounce-slow {
+    animation: bounceSlow 2s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+}
+
+/* ========================================
+   Keyframes
+   ======================================== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3),
+                0 0 60px rgba(99, 102, 241, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.5),
+                0 0 80px rgba(99, 102, 241, 0.2);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.06; }
+}
+
+/* ========================================
+   Hero Background Grid
+   ======================================== */
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+/* ========================================
+   Code Panel Styling
+   ======================================== */
+
+.code-line {
+  transition: all 0.3s ease;
+  padding: 2px 12px;
+  border-left: 3px solid transparent;
+  font-family: var(--font-mono);
+}
+
+.code-line.active {
+  background: rgba(99, 102, 241, 0.15);
+  border-left-color: var(--color-primary-500);
+  box-shadow: inset 0 0 30px rgba(99, 102, 241, 0.05);
+}
+
+.code-line.executed {
+  background: rgba(74, 222, 128, 0.08);
+  border-left-color: var(--color-success-400);
+}
+
+/* ========================================
+   Visualizer Bar
+   ======================================== */
+
+.viz-bar {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 4px 4px 0 0;
+  position: relative;
+}
+
+.viz-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent);
+  border-radius: 4px 4px 0 0;
+}
+
+.viz-bar.comparing {
+  background: var(--color-viz-compare) !important;
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+}
+
+.viz-bar.swapping {
+  background: var(--color-viz-swap) !important;
+  box-shadow: 0 0 20px rgba(248, 113, 113, 0.4);
+}
+
+.viz-bar.sorted {
+  background: var(--color-viz-sorted) !important;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
+}
+
+.viz-bar.active {
+  background: var(--color-viz-active) !important;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+}
+
+/* ========================================
+   Graph Node
+   ======================================== */
+
+.graph-node {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.graph-node.visited {
+  fill: var(--color-viz-visited);
+  filter: drop-shadow(0 0 10px rgba(192, 132, 252, 0.5));
+}
+
+.graph-node.current {
+  fill: var(--color-viz-current);
+  filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.6));
+}
+
+.graph-node.queued {
+  fill: var(--color-viz-queued);
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.4));
+}
+
+.graph-edge {
+  transition: all 0.4s ease;
+  stroke: var(--color-dark-600);
+  stroke-width: 2;
+}
+
+.graph-edge.traversed {
+  stroke: var(--color-accent-400);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.4));
+}
+
+/* ========================================
+   Command Bar
+   ======================================== */
+
+.command-input {
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+}
+
+.command-input:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15),
+              0 0 20px rgba(99, 102, 241, 0.1);
+  outline: none;
+}
+
+/* ========================================
+   Custom Cursor
+   ======================================== */
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary-400);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(99, 102, 241, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s;
+}
+
+.cursor-dot.hovering {
+  width: 14px;
+  height: 14px;
+  background: var(--color-accent-400);
+}
+
+.cursor-ring.hovering {
+  width: 50px;
+  height: 50px;
+  border-color: rgba(34, 211, 238, 0.5);
+}
+
+/* ========================================
+   Language Card Colors
+   ======================================== */
+
+.lang-c { --lang-color: #A8B9CC; }
+.lang-cpp { --lang-color: #00599C; }
+.lang-java { --lang-color: #ED8B00; }
+.lang-python { --lang-color: #3776AB; }
+.lang-javascript { --lang-color: #F7DF1E; }
+
+.lang-card {
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lang-card:hover {
+  border-color: var(--lang-color, var(--color-primary-500));
+  box-shadow: 0 0 25px color-mix(in srgb, var(--lang-color, var(--color-primary-500)) 30%, transparent);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.lang-card.selected {
+  border-color: var(--lang-color, var(--color-primary-500));
+  background: color-mix(in srgb, var(--lang-color, var(--color-primary-500)) 10%, transparent);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--lang-color, var(--color-primary-500)) 25%, transparent);
+}
+
+/* ========================================
+   Stack / Queue Visualization
+   ======================================== */
+
+.stack-item, .queue-item {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ========================================
+   XP Bar
+   ======================================== */
+
+.xp-bar {
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-accent-400));
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+/* ========================================
+   Mode Card
+   ======================================== */
+
+.mode-card {
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mode-card:hover {
+  border-color: var(--color-primary-500);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.mode-card.active {
+  border-color: var(--color-primary-500);
+  background: rgba(99, 102, 241, 0.1);
+}

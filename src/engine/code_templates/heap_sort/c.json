@@ -1,0 +1,14 @@
+{
+  "language": "c",
+  "code": "void heapSort(int arr[], int n) {\n    for (int i = n/2-1; i >= 0; i--)\n        heapify(arr, n, i);\n    for (int i = n-1; i > 0; i--) {\n        int temp = arr[0];\n        arr[0] = arr[i];\n        arr[i] = temp;\n        heapify(arr, i, 0);\n    }\n}",
+  "time_complexity": "O(n log n)",
+  "space_complexity": "O(1)",
+  "best_case": "O(n log n)",
+  "worst_case": "O(n log n)",
+  "average_case": "O(n log n)",
+  "steps_logic": [
+    "Build max heap",
+    "Extract max element",
+    "Heapify remaining"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "language": "c",
+  "code": "struct Stack {\n    int arr[100];\n    int top;\n};\nvoid push(struct Stack *s, int x) {\n    s->arr[++(s->top)] = x;\n}\nint pop(struct Stack *s) {\n    return s->arr[(s->top)--];\n}",
+  "time_complexity": "O(1)",
+  "space_complexity": "O(n)",
+  "best_case": "O(1)",
+  "worst_case": "O(1)",
+  "average_case": "O(1)",
+  "steps_logic": [
+    "Push: Add to top",
+    "Pop: Remove from top",
+    "Peek: View top element"
+  ]
+}

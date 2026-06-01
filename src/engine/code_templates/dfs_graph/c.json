@@ -1,0 +1,11 @@
+{
+  "language": "c",
+  "code": "void DFS(int v, int n, int adj[][100], int visited[]) {\n    visited[v] = 1;\n    for (int u = 0; u < n; u++) {\n        if (adj[v][u] == 1 && !visited[u]) {\n            DFS(u, n, adj, visited);\n        }\n    }\n}",
+  "time_complexity": "O(V + E)",
+  "space_complexity": "O(V)",
+  "steps_logic": [
+    "Visit current node",
+    "Mark as visited",
+    "Recursively visit unvisited neighbors"
+  ]
+}

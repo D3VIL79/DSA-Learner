@@ -1,0 +1,14 @@
+{
+  "language": "java",
+  "code": "class InsertionSort {\n    void sort(int arr[]) {\n        int n = arr.length;\n        for (int i = 1; i < n; ++i) {\n            int key = arr[i];\n            int j = i - 1;\n            while (j >= 0 && arr[j] > key) {\n                arr[j + 1] = arr[j];\n                j = j - 1;\n            }\n            arr[j + 1] = key;\n        }\n    }\n}",
+  "time_complexity": "O(n^2)",
+  "space_complexity": "O(1)",
+  "best_case": "O(n)",
+  "worst_case": "O(n^2)",
+  "average_case": "O(n^2)",
+  "steps_logic": [
+    "Pick next unsorted element",
+    "Shift sorted elements right",
+    "Insert element in correct position"
+  ]
+}

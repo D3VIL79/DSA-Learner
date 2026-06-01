@@ -1,0 +1,14 @@
+{
+  "language": "c",
+  "code": "struct Queue {\n    int arr[100];\n    int front, rear;\n};\nvoid enqueue(struct Queue *q, int x) {\n    q->arr[++(q->rear)] = x;\n}\nint dequeue(struct Queue *q) {\n    return q->arr[(q->front)++];\n}",
+  "time_complexity": "O(1)",
+  "space_complexity": "O(n)",
+  "best_case": "O(1)",
+  "worst_case": "O(1)",
+  "average_case": "O(1)",
+  "steps_logic": [
+    "Enqueue: Add to rear",
+    "Dequeue: Remove from front",
+    "Front: View first element"
+  ]
+}

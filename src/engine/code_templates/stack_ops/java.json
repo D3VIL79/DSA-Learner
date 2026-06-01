@@ -1,0 +1,14 @@
+{
+  "language": "java",
+  "code": "class Stack {\n    int top = -1;\n    int[] arr = new int[100];\n    void push(int x) { arr[++top] = x; }\n    int pop() { return arr[top--]; }\n    int peek() { return arr[top]; }\n    boolean isEmpty() { return top == -1; }\n}",
+  "time_complexity": "O(1)",
+  "space_complexity": "O(n)",
+  "best_case": "O(1)",
+  "worst_case": "O(1)",
+  "average_case": "O(1)",
+  "steps_logic": [
+    "Push: Add to top",
+    "Pop: Remove from top",
+    "Peek: View top element"
+  ]
+}

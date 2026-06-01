@@ -1,0 +1,12 @@
+{
+  "language": "java",
+  "code": "void BFS(int s, LinkedList<Integer> adj[]) {\n    boolean visited[] = new boolean[adj.length];\n    LinkedList<Integer> queue = new LinkedList<Integer>();\n    visited[s] = true;\n    queue.add(s);\n    while (queue.size() != 0) {\n        s = queue.poll();\n        Iterator<Integer> i = adj[s].listIterator();\n        while (i.hasNext()) {\n            int n = i.next();\n            if (!visited[n]) {\n                visited[n] = true;\n                queue.add(n);\n            }\n        }\n    }\n}",
+  "time_complexity": "O(V + E)",
+  "space_complexity": "O(V)",
+  "steps_logic": [
+    "Enqueue start node",
+    "Dequeue node",
+    "Process node",
+    "Enqueue unvisited neighbors"
+  ]
+}

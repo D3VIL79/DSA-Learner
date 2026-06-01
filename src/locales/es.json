@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "DSA Quest",
+    "subtitle": "Motor de Aprendizaje de Algoritmos Cinemático",
+    "start": "Empezar Juego"
+  },
+  "menu": {
+    "language": "Idioma",
+    "algorithm": "Algoritmo",
+    "mode": "Modo",
+    "command_placeholder": "Buscar algoritmo o escribir comando..."
+  },
+  "algorithms": {
+    "bubble_sort": "Ordenamiento Burbuja",
+    "selection_sort": "Ordenamiento por Selección",
+    "insertion_sort": "Ordenamiento por Inserción",
+    "merge_sort": "Ordenamiento por Mezcla",
+    "quick_sort": "Ordenamiento Rápido",
+    "heap_sort": "Ordenamiento por Montículo",
+    "linear_search": "Búsqueda Lineal",
+    "binary_search": "Búsqueda Binaria",
+    "bfs_graph": "Búsqueda en Anchura (BFS)",
+    "dfs_graph": "Búsqueda en Profundidad (DFS)",
+    "stack_ops": "Operaciones de Pila",
+    "queue_ops": "Operaciones de Cola"
+  },
+  "controls": {
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "step": "Siguiente Paso",
+    "reset": "Reiniciar"
+  }
+}

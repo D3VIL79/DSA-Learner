@@ -1,0 +1,11 @@
+{
+  "language": "c",
+  "code": "void mergeSort(int arr[], int l, int r) {\n    if (l < r) {\n        int m = l + (r - l) / 2;\n        mergeSort(arr, l, m);\n        mergeSort(arr, m + 1, r);\n        merge(arr, l, m, r);\n    }\n}",
+  "time_complexity": "O(n log n)",
+  "space_complexity": "O(n)",
+  "steps_logic": [
+    "Divide array in half",
+    "Recursively sort halves",
+    "Merge sorted halves"
+  ]
+}

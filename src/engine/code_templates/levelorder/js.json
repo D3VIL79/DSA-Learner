@@ -1,0 +1,7 @@
+{
+  "language": "js",
+  "code": "function levelorder(root) {\n  if (!root) return;\n  let queue = [root];\n  while (queue.length > 0) {\n    let curr = queue.shift();\n    console.log(curr.value);\n    if (curr.left) queue.push(curr.left);\n    if (curr.right) queue.push(curr.right);\n  }\n}",
+  "time_complexity": "O(N)",
+  "space_complexity": "O(W)",
+  "steps_logic": []
+}

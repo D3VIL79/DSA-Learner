@@ -1,0 +1,12 @@
+{
+  "language": "python",
+  "code": "def bfs(graph, start):\n    visited = set()\n    queue = [start]\n    visited.add(start)\n    while queue:\n        node = queue.pop(0)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)",
+  "time_complexity": "O(V + E)",
+  "space_complexity": "O(V)",
+  "steps_logic": [
+    "Enqueue start node",
+    "Dequeue node",
+    "Process node",
+    "Enqueue unvisited neighbors"
+  ]
+}

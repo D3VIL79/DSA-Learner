@@ -1,0 +1,14 @@
+{
+  "language": "python",
+  "code": "def linear_search(arr, x):\n    for i in range(len(arr)):\n        if arr[i] == x:\n            return i\n    return -1",
+  "time_complexity": "O(n)",
+  "space_complexity": "O(1)",
+  "best_case": "O(1)",
+  "worst_case": "O(n)",
+  "average_case": "O(n)",
+  "steps_logic": [
+    "Start from first element",
+    "Compare with target",
+    "Move to next if not found"
+  ]
+}

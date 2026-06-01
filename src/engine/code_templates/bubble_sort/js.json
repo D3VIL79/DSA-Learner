@@ -1,0 +1,12 @@
+{
+  "language": "js",
+  "code": "function bubbleSort(arr) {\n    let n = arr.length;\n    for (let i = 0; i < n; i++) {\n        for (let j = 0; j < n - i - 1; j++) {\n            if (arr[j] > arr[j + 1]) {\n                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];\n            }\n        }\n    }\n    return arr;\n}",
+  "time_complexity": "O(n^2)",
+  "space_complexity": "O(1)",
+  "steps_logic": [
+    "Outer loop",
+    "Inner loop",
+    "Compare adjacent",
+    "Swap"
+  ]
+}

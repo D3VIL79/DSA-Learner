@@ -1,0 +1,14 @@
+{
+  "language": "cpp",
+  "code": "class Queue {\n    int front, rear;\n    int arr[100];\npublic:\n    Queue() { front = rear = -1; }\n    void enqueue(int x) { arr[++rear] = x; }\n    int dequeue() { return arr[++front]; }\n    int peek() { return arr[front+1]; }\n    bool isEmpty() { return front == rear; }\n};",
+  "time_complexity": "O(1)",
+  "space_complexity": "O(n)",
+  "best_case": "O(1)",
+  "worst_case": "O(1)",
+  "average_case": "O(1)",
+  "steps_logic": [
+    "Enqueue: Add to rear",
+    "Dequeue: Remove from front",
+    "Front: View first element"
+  ]
+}

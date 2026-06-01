@@ -1,0 +1,14 @@
+{
+  "language": "cpp",
+  "code": "void selectionSort(int arr[], int n) {\n    for (int i = 0; i < n-1; i++) {\n        int min_idx = i;\n        for (int j = i+1; j < n; j++)\n            if (arr[j] < arr[min_idx])\n                min_idx = j;\n        swap(arr[min_idx], arr[i]);\n    }\n}",
+  "time_complexity": "O(n^2)",
+  "space_complexity": "O(1)",
+  "best_case": "O(n^2)",
+  "worst_case": "O(n^2)",
+  "average_case": "O(n^2)",
+  "steps_logic": [
+    "Find minimum in unsorted region",
+    "Swap with first unsorted element",
+    "Advance sorted boundary"
+  ]
+}

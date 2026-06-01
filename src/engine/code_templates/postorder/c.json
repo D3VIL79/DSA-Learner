@@ -1,0 +1,7 @@
+{
+  "language": "c",
+  "code": "function postorder(node) {\n  if (node === null) return;\n  postorder(node.left);\n  postorder(node.right);\n  console.log(node.value);\n}",
+  "time_complexity": "O(N)",
+  "space_complexity": "O(H)",
+  "steps_logic": []
+}

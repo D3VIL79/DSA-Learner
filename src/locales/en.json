@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "title": "DSA Quest",
+    "subtitle": "Cinematic Algorithm Learning Engine",
+    "start": "Start Game"
+  },
+  "menu": {
+    "language": "Language",
+    "algorithm": "Algorithm",
+    "mode": "Mode",
+    "command_placeholder": "Search algorithm or type command..."
+  },
+  "algorithms": {
+    "bubble_sort": "Bubble Sort",
+    "selection_sort": "Selection Sort",
+    "insertion_sort": "Insertion Sort",
+    "merge_sort": "Merge Sort",
+    "quick_sort": "Quick Sort",
+    "heap_sort": "Heap Sort",
+    "linear_search": "Linear Search",
+    "binary_search": "Binary Search",
+    "bfs_graph": "Breadth-First Search (BFS)",
+    "dfs_graph": "Depth-First Search (DFS)",
+    "stack_ops": "Stack Operations",
+    "queue_ops": "Queue Operations",
+    "dijkstra": "Dijkstra's Algorithm",
+    "inorder": "Inorder Traversal",
+    "preorder": "Preorder Traversal",
+    "postorder": "Postorder Traversal",
+    "levelorder": "Level Order Traversal",
+    "counting_sort": "Counting Sort"
+  },
+  "controls": {
+    "play": "Play",
+    "pause": "Pause",
+    "step": "Step Forward",
+    "reset": "Reset"
+  }
+}

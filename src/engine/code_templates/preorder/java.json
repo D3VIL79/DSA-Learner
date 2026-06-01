@@ -1,0 +1,7 @@
+{
+  "language": "java",
+  "code": "function preorder(node) {\n  if (node === null) return;\n  console.log(node.value);\n  preorder(node.left);\n  preorder(node.right);\n}",
+  "time_complexity": "O(N)",
+  "space_complexity": "O(H)",
+  "steps_logic": []
+}

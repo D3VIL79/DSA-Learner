@@ -1,0 +1,11 @@
+{
+  "language": "java",
+  "code": "class QuickSort {\n    void sort(int arr[], int low, int high) {\n        if (low < high) {\n            int pi = partition(arr, low, high);\n            sort(arr, low, pi-1);\n            sort(arr, pi+1, high);\n        }\n    }\n}",
+  "time_complexity": "O(n log n)",
+  "space_complexity": "O(log n)",
+  "steps_logic": [
+    "Choose pivot",
+    "Partition array around pivot",
+    "Recursively sort sub-arrays"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "language": "python",
+  "code": "class Queue:\n    def __init__(self):\n        self.items = []\n    def enqueue(self, item):\n        self.items.append(item)\n    def dequeue(self):\n        return self.items.pop(0)\n    def front(self):\n        return self.items[0]\n    def is_empty(self):\n        return len(self.items) == 0",
+  "time_complexity": "O(1)",
+  "space_complexity": "O(n)",
+  "best_case": "O(1)",
+  "worst_case": "O(1)",
+  "average_case": "O(1)",
+  "steps_logic": [
+    "Enqueue: Add to rear",
+    "Dequeue: Remove from front",
+    "Front: View first element"
+  ]
+}

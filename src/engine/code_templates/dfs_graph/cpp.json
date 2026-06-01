@@ -1,0 +1,11 @@
+{
+  "language": "cpp",
+  "code": "void DFSUtil(int v, vector<bool>& visited, vector<vector<int>>& adj) {\n    visited[v] = true;\n    for (int u : adj[v]) {\n        if (!visited[u])\n            DFSUtil(u, visited, adj);\n    }\n}\nvoid DFS(int v, vector<vector<int>>& adj) {\n    vector<bool> visited(adj.size(), false);\n    DFSUtil(v, visited, adj);\n}",
+  "time_complexity": "O(V + E)",
+  "space_complexity": "O(V)",
+  "steps_logic": [
+    "Visit current node",
+    "Mark as visited",
+    "Recursively visit unvisited neighbors"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "language": "cpp",
+  "code": "class Stack {\n    int top;\n    int arr[100];\npublic:\n    Stack() { top = -1; }\n    void push(int x) { arr[++top] = x; }\n    int pop() { return arr[top--]; }\n    int peek() { return arr[top]; }\n    bool isEmpty() { return top == -1; }\n};",
+  "time_complexity": "O(1)",
+  "space_complexity": "O(n)",
+  "best_case": "O(1)",
+  "worst_case": "O(1)",
+  "average_case": "O(1)",
+  "steps_logic": [
+    "Push: Add to top",
+    "Pop: Remove from top",
+    "Peek: View top element"
+  ]
+}

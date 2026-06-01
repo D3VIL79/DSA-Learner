@@ -1,0 +1,14 @@
+{
+  "language": "js",
+  "code": "class Stack {\n    constructor() { this.items = []; }\n    push(item) { this.items.push(item); }\n    pop() { return this.items.pop(); }\n    peek() { return this.items[this.items.length - 1]; }\n    isEmpty() { return this.items.length === 0; }\n}",
+  "time_complexity": "O(1)",
+  "space_complexity": "O(n)",
+  "best_case": "O(1)",
+  "worst_case": "O(1)",
+  "average_case": "O(1)",
+  "steps_logic": [
+    "Push: Add to top",
+    "Pop: Remove from top",
+    "Peek: View top element"
+  ]
+}

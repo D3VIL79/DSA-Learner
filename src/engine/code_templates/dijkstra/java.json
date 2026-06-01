@@ -1,0 +1,7 @@
+{
+  "language": "java",
+  "code": "function dijkstra(graph, start) {\n  let dist = {};\n  let pq = [{ node: start, dist: 0 }];\n  \n  for (let node in graph) dist[node] = Infinity;\n  dist[start] = 0;\n  \n  while (pq.length > 0) {\n    pq.sort((a, b) => a.dist - b.dist);\n    let { node, dist: currentDist } = pq.shift();\n    \n    if (currentDist > dist[node]) continue;\n    \n    for (let neighbor in graph[node]) {\n      let weight = graph[node][neighbor];\n      let newDist = dist[node] + weight;\n      \n      if (newDist < dist[neighbor]) {\n        dist[neighbor] = newDist;\n        pq.push({ node: neighbor, dist: newDist });\n      }\n    }\n  }\n  return dist;\n}",
+  "time_complexity": "O((V + E) log V)",
+  "space_complexity": "O(V)",
+  "steps_logic": []
+}

@@ -1,0 +1,11 @@
+{
+  "language": "js",
+  "code": "function quickSort(arr, low = 0, high = arr.length - 1) {\n    if (low < high) {\n        let pi = partition(arr, low, high);\n        quickSort(arr, low, pi - 1);\n        quickSort(arr, pi + 1, high);\n    }\n    return arr;\n}",
+  "time_complexity": "O(n log n)",
+  "space_complexity": "O(log n)",
+  "steps_logic": [
+    "Choose pivot",
+    "Partition array around pivot",
+    "Recursively sort sub-arrays"
+  ]
+}

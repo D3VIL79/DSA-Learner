@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "DSA Quest",
+    "subtitle": "सिनेमैटिक एल्गोरिथम लर्निंग इंजन",
+    "start": "खेल शुरू करें"
+  },
+  "menu": {
+    "language": "भाषा",
+    "algorithm": "एल्गोरिथम",
+    "mode": "मोड",
+    "command_placeholder": "एल्गोरिथम खोजें या कमांड टाइप करें..."
+  },
+  "algorithms": {
+    "bubble_sort": "बबल सॉर्ट",
+    "selection_sort": "सेलेक्शन सॉर्ट",
+    "insertion_sort": "इन्सर्शन सॉर्ट",
+    "merge_sort": "मर्ज सॉर्ट",
+    "quick_sort": "क्विक सॉर्ट",
+    "heap_sort": "हीप सॉर्ट",
+    "linear_search": "लीनियर सर्च",
+    "binary_search": "बाइनरी सर्च",
+    "bfs_graph": "ब्रेड्थ-फर्स्ट सर्च (BFS)",
+    "dfs_graph": "डेप्थ-फर्स्ट सर्च (DFS)",
+    "stack_ops": "स्टैक ऑपरेशन",
+    "queue_ops": "क्यू ऑपरेशन"
+  },
+  "controls": {
+    "play": "चलाएं",
+    "pause": "रोकें",
+    "step": "अगला कदम",
+    "reset": "रीसेट"
+  }
+}

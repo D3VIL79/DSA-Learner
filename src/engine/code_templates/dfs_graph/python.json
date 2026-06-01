@@ -1,0 +1,11 @@
+{
+  "language": "python",
+  "code": "def dfs(graph, node, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(node)\n    for neighbor in graph[node]:\n        if neighbor not in visited:\n            dfs(graph, neighbor, visited)",
+  "time_complexity": "O(V + E)",
+  "space_complexity": "O(V)",
+  "steps_logic": [
+    "Visit current node",
+    "Mark as visited",
+    "Recursively visit unvisited neighbors"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "language": "cpp",
+  "code": "void BFS(int s, vector<vector<int>>& adj) {\n    vector<bool> visited(adj.size(), false);\n    queue<int> q;\n    visited[s] = true;\n    q.push(s);\n    while (!q.empty()) {\n        int u = q.front();\n        q.pop();\n        for (int v : adj[u]) {\n            if (!visited[v]) {\n                visited[v] = true;\n                q.push(v);\n            }\n        }\n    }\n}",
+  "time_complexity": "O(V + E)",
+  "space_complexity": "O(V)",
+  "steps_logic": [
+    "Enqueue start node",
+    "Dequeue node",
+    "Process node",
+    "Enqueue unvisited neighbors"
+  ]
+}

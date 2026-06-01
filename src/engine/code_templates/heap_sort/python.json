@@ -1,0 +1,14 @@
+{
+  "language": "python",
+  "code": "def heap_sort(arr):\n    import heapq\n    heapq.heapify(arr)\n    return [heapq.heappop(arr) for _ in range(len(arr))]",
+  "time_complexity": "O(n log n)",
+  "space_complexity": "O(1)",
+  "best_case": "O(n log n)",
+  "worst_case": "O(n log n)",
+  "average_case": "O(n log n)",
+  "steps_logic": [
+    "Build max heap",
+    "Extract max element",
+    "Heapify remaining"
+  ]
+}

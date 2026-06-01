@@ -1,0 +1,11 @@
+{
+  "language": "python",
+  "code": "def merge_sort(arr):\n    if len(arr) > 1:\n        mid = len(arr) // 2\n        L = arr[:mid]\n        R = arr[mid:]\n        merge_sort(L)\n        merge_sort(R)\n        # Merge L and R back into arr...",
+  "time_complexity": "O(n log n)",
+  "space_complexity": "O(n)",
+  "steps_logic": [
+    "Divide array in half",
+    "Recursively sort halves",
+    "Merge sorted halves"
+  ]
+}
