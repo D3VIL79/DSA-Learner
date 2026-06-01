@@ -439,3 +439,56 @@
   border-color: var(--color-primary-500);
   background: rgba(99, 102, 241, 0.1);
 }
+
+/* ========================================
+   Mobile Landscape Lock Overlay
+   ======================================== */
+
+@media (max-width: 1024px) and (orientation: portrait) {
+  .rotate-overlay {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1025px), (orientation: landscape) {
+  .rotate-overlay {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   Mobile Responsive Overrides
+   ======================================== */
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Mobile landscape layout adjustments */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .mobile-navbar {
+    height: 36px !important;
+  }
+  .mobile-controls {
+    height: 32px !important;
+  }
+  .mobile-explanation {
+    height: 36px !important;
+  }
+  .mobile-right-panel {
+    width: 240px !important;
+  }
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-right-panel {
+    width: 200px !important;
+  }
+}

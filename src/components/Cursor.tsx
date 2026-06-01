@@ -3,8 +3,20 @@ import React, { useEffect, useState } from 'react';
 export const Cursor: React.FC = () => {
   const [pos, setPos] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    // Detect touch devices
+    const checkTouch = () => {
+      setIsTouchDevice(
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(hover: none)').matches
+      );
+    };
+    checkTouch();
+    window.addEventListener('resize', checkTouch);
+
     const handleMouseMove = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
     };
@@ -28,10 +40,13 @@ export const Cursor: React.FC = () => {
     window.addEventListener('mouseover', handleMouseOver);
 
     return () => {
+      window.removeEventListener('resize', checkTouch);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
+
+  if (isTouchDevice) return null;
 
   return (
     <>

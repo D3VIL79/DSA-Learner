@@ -20,12 +20,13 @@ export const ArrayVisualizer: React.FC<ArrayVisualizerProps> = ({
 }) => {
   if (!data.length) return null;
   const maxVal = Math.max(...data, 1);
-  const barWidth = Math.max(20, Math.min(56, Math.floor(700 / data.length)));
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+  const barWidth = isMobile ? Math.max(14, Math.min(36, Math.floor(400 / data.length))) : Math.max(20, Math.min(56, Math.floor(700 / data.length)));
 
   return (
     <div className="w-full flex flex-col items-center">
       {/* Bars */}
-      <div className="flex items-end justify-center gap-[3px] px-4" style={{ height: '260px' }}>
+      <div className="flex items-end justify-center gap-[2px] px-4 max-lg:landscape:px-1" style={{ height: isMobile ? '160px' : '260px' }}>
         {data.map((value, idx) => {
           const heightPercent = (value / maxVal) * 100;
 

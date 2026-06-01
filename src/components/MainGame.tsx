@@ -158,12 +158,22 @@ export const MainGame: React.FC = () => {
 
   return (
     <div className="w-screen h-screen flex flex-col bg-dark-950 overflow-hidden">
+      {/* ===== PORTRAIT ROTATE OVERLAY ===== */}
+      <div className="rotate-overlay fixed inset-0 z-[9999] bg-dark-950 flex-col items-center justify-center gap-6 text-center p-8" style={{ display: 'none' }}>
+        <div className="text-6xl animate-bounce-slow">📱↻</div>
+        <h2 className="text-2xl font-bold text-gradient">Rotate Your Device</h2>
+        <p className="text-slate-400 text-sm max-w-xs">DSA Quest is best experienced in landscape mode. Please rotate your device for the full experience.</p>
+        <div className="w-16 h-24 border-2 border-primary-500 rounded-xl animate-pulse-glow relative">
+          <div className="absolute inset-2 border border-primary-400/30 rounded-lg" />
+        </div>
+      </div>
+
       {/* ===== TOP NAVBAR ===== */}
-      <header className="h-12 border-b border-white/5 flex items-center justify-between px-3 glass-strong z-30 shrink-0">
+      <header className="h-12 max-lg:landscape:h-9 border-b border-white/5 flex items-center justify-between px-3 max-lg:landscape:px-2 glass-strong z-30 shrink-0 mobile-navbar">
         {/* Left */}
-        <div className="flex items-center gap-3">
-          <h2 className="text-base font-black text-gradient tracking-tight">{t('hero.title')}</h2>
-          <div className="flex gap-1">
+        <div className="flex items-center gap-3 max-lg:landscape:gap-1.5">
+          <h2 className="text-base max-lg:landscape:text-xs font-black text-gradient tracking-tight">{t('hero.title')}</h2>
+          <div className="flex gap-1 max-md:landscape:hidden">
             {['en', 'hi', 'es'].map(lang => (
               <button key={lang} onClick={() => setLanguage(lang)}
                 className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase ${language === lang ? 'bg-primary-600 text-white' : 'bg-dark-800 text-slate-600 hover:text-white'} transition-all`}>
@@ -172,18 +182,18 @@ export const MainGame: React.FC = () => {
             ))}
           </div>
           {/* XP Bar */}
-          <div className="flex items-center gap-2 ml-2">
+          <div className="flex items-center gap-2 ml-2 max-lg:landscape:ml-1 max-lg:landscape:gap-1">
             <Trophy size={13} className="text-warning-400" />
-            <span className="text-[10px] font-bold text-warning-400">Lv.{progress.level}</span>
-            <div className="w-20 h-1.5 bg-dark-700 rounded-full overflow-hidden">
+            <span className="text-[10px] font-bold text-warning-400 max-md:landscape:hidden">Lv.{progress.level}</span>
+            <div className="w-20 max-lg:landscape:w-12 h-1.5 bg-dark-700 rounded-full overflow-hidden">
               <div className="xp-bar h-full" style={{ width: `${xpPercent}%` }} />
             </div>
-            <span className="text-[10px] text-slate-600">{progress.xp}xp</span>
+            <span className="text-[10px] text-slate-600 max-md:landscape:hidden">{progress.xp}xp</span>
           </div>
         </div>
 
         {/* Center: Search */}
-        <div className="relative w-[380px]">
+        <div className="relative w-[380px] max-lg:landscape:w-[220px] max-md:landscape:w-[160px]">
           <input type="text" value={cmd}
             onChange={(e) => { setCmd(e.target.value); setShowDropdown(true); }}
             onFocus={() => setShowDropdown(true)}
@@ -209,7 +219,7 @@ export const MainGame: React.FC = () => {
         </div>
 
         {/* Right: Prog Language */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 max-md:landscape:hidden">
           {PROG_LANGUAGES.map(pl => (
             <button key={pl.id} onClick={() => setProgLang(pl.id)}
               className={`px-2 py-0.5 rounded text-[10px] font-bold transition-all ${progLang === pl.id ? 'text-white' : 'text-slate-600 hover:text-white bg-dark-800'}`}
@@ -225,26 +235,26 @@ export const MainGame: React.FC = () => {
         {/* LEFT: Visualizer */}
         <section className="flex-1 flex flex-col border-r border-white/5 relative">
           {/* Controls */}
-          <div className="h-10 border-b border-white/5 flex items-center justify-between px-3 shrink-0">
-            <div className="flex items-center gap-1">
-              <button onClick={viz.play} className="p-1.5 hover:bg-white/10 rounded transition" title="Play"><Play size={14} className="text-success-400" /></button>
-              <button onClick={viz.pause} className="p-1.5 hover:bg-white/10 rounded transition" title="Pause"><Square size={14} className="text-warning-400" /></button>
-              <button onClick={viz.stepBackward} className="p-1.5 hover:bg-white/10 rounded transition" title="Step Back"><Rewind size={14} className="text-accent-400" /></button>
-              <button onClick={viz.stepForward} className="p-1.5 hover:bg-white/10 rounded transition" title="Step Forward"><FastForward size={14} className="text-accent-400" /></button>
-              <button onClick={handleReset} className="p-1.5 hover:bg-white/10 rounded transition" title="Reset"><RotateCcw size={14} className="text-danger-400" /></button>
-              <div className="w-px h-4 bg-white/10 mx-1" />
+          <div className="h-10 max-lg:landscape:h-8 border-b border-white/5 flex items-center justify-between px-3 max-lg:landscape:px-1.5 shrink-0 mobile-controls">
+            <div className="flex items-center gap-1 max-lg:landscape:gap-0.5">
+              <button onClick={viz.play} className="p-1.5 max-lg:landscape:p-1 hover:bg-white/10 rounded transition" title="Play"><Play size={14} className="text-success-400 max-lg:landscape:w-3 max-lg:landscape:h-3" /></button>
+              <button onClick={viz.pause} className="p-1.5 max-lg:landscape:p-1 hover:bg-white/10 rounded transition" title="Pause"><Square size={14} className="text-warning-400 max-lg:landscape:w-3 max-lg:landscape:h-3" /></button>
+              <button onClick={viz.stepBackward} className="p-1.5 max-lg:landscape:p-1 hover:bg-white/10 rounded transition" title="Step Back"><Rewind size={14} className="text-accent-400 max-lg:landscape:w-3 max-lg:landscape:h-3" /></button>
+              <button onClick={viz.stepForward} className="p-1.5 max-lg:landscape:p-1 hover:bg-white/10 rounded transition" title="Step Forward"><FastForward size={14} className="text-accent-400 max-lg:landscape:w-3 max-lg:landscape:h-3" /></button>
+              <button onClick={handleReset} className="p-1.5 max-lg:landscape:p-1 hover:bg-white/10 rounded transition" title="Reset"><RotateCcw size={14} className="text-danger-400 max-lg:landscape:w-3 max-lg:landscape:h-3" /></button>
+              <div className="w-px h-4 bg-white/10 mx-1 max-md:landscape:hidden" />
               
-              <span className="text-[10px] text-slate-600 mr-1">Timeline</span>
+              <span className="text-[10px] text-slate-600 mr-1 max-md:landscape:hidden">Timeline</span>
               <input type="range" min={0} max={viz.history.length > 0 ? viz.history.length - 1 : 0} value={Math.max(0, viz.currentStepIndex)}
-                onChange={(e) => viz.goToStep(Number(e.target.value))} className="w-24 h-1 accent-primary-500" />
-              <span className="text-[10px] text-slate-600 ml-2 font-mono">{viz.currentStepIndex + 1}/{viz.steps.length}</span>
+                onChange={(e) => viz.goToStep(Number(e.target.value))} className="w-24 max-lg:landscape:w-16 h-1 accent-primary-500" />
+              <span className="text-[10px] text-slate-600 ml-2 max-lg:landscape:ml-1 font-mono">{viz.currentStepIndex + 1}/{viz.steps.length}</span>
             </div>
 
             {/* Input controls */}
-            <div className="flex items-center gap-1.5">
-              <label className="text-[10px] text-slate-600">Size:</label>
+            <div className="flex items-center gap-1.5 max-lg:landscape:gap-1">
+              <label className="text-[10px] text-slate-600 max-md:landscape:hidden">Size:</label>
               <input type="number" min={2} max={30} value={arraySize} onChange={(e) => setArraySize(Number(e.target.value))}
-                className="w-10 px-1 py-0.5 bg-dark-800 border border-white/10 rounded text-[10px] text-slate-300 text-center focus:outline-none focus:border-primary-500" />
+                className="w-10 max-lg:landscape:w-8 px-1 py-0.5 bg-dark-800 border border-white/10 rounded text-[10px] text-slate-300 text-center focus:outline-none focus:border-primary-500" />
               <button onClick={handleRandomize} className="p-1 hover:bg-white/10 rounded transition" title="Randomize"><Shuffle size={13} className="text-accent-400" /></button>
               
               {isTree && (
@@ -262,7 +272,7 @@ export const MainGame: React.FC = () => {
               value={customInput}
               onChange={(e) => setCustomInput(e.target.value)}
               placeholder={isGraph ? "Edges: 0-1, 1-2" : "e.g. 5,3,8,1"}
-              className="w-24 px-2 py-0.5 bg-dark-800 border border-white/10 rounded text-[10px] text-slate-300 focus:outline-none focus:border-primary-500" />
+              className="w-24 max-lg:landscape:w-16 px-2 max-lg:landscape:px-1 py-0.5 bg-dark-800 border border-white/10 rounded text-[10px] text-slate-300 focus:outline-none focus:border-primary-500" />
               <button onClick={handleCustomInput} className="px-2 py-0.5 bg-primary-600/20 text-primary-400 text-[10px] font-bold rounded hover:bg-primary-600/30 transition flex items-center gap-0.5">
                 <ArrowRight size={10} /> Go
               </button>
@@ -270,10 +280,10 @@ export const MainGame: React.FC = () => {
           </div>
 
           {/* Visualization */}
-          <div className="flex-1 flex flex-col items-center justify-center p-4 overflow-hidden">
+          <div className="flex-1 flex flex-col items-center justify-center p-4 max-lg:landscape:p-2 overflow-hidden">
             {activeAlgorithm ? (
-              <div className="w-full flex flex-col items-center gap-3">
-                <h3 className="text-xl font-bold text-white">{t(`algorithms.${activeAlgorithm}`)}</h3>
+              <div className="w-full flex flex-col items-center gap-3 max-lg:landscape:gap-1">
+                <h3 className="text-xl max-lg:landscape:text-sm font-bold text-white">{t(`algorithms.${activeAlgorithm}`)}</h3>
                 
                 {mode === 'visualize' && !isGraph && !isTree && !isStackQueue && !isGrid && (
                   <ArrayVisualizer
@@ -332,17 +342,17 @@ export const MainGame: React.FC = () => {
 
           {/* Explanation Bar */}
           {viz.currentMessage && (
-            <div className="h-14 border-t border-white/5 flex items-center px-4 glass-strong shrink-0">
-              <BookOpen size={15} className="text-accent-400 shrink-0 mr-3" />
-              <p className="text-xs text-slate-200 font-medium flex-1 truncate">{viz.currentMessage}</p>
-              {viz.activeLine >= 0 && <span className="text-[10px] text-slate-500 font-mono shrink-0 ml-2">Line {viz.activeLine + 1}</span>}
+            <div className="h-14 max-lg:landscape:h-9 border-t border-white/5 flex items-center px-4 max-lg:landscape:px-2 glass-strong shrink-0 mobile-explanation">
+              <BookOpen size={15} className="text-accent-400 shrink-0 mr-3 max-lg:landscape:mr-1.5 max-lg:landscape:w-3 max-lg:landscape:h-3" />
+              <p className="text-xs max-lg:landscape:text-[10px] text-slate-200 font-medium flex-1 truncate">{viz.currentMessage}</p>
+              {viz.activeLine >= 0 && <span className="text-[10px] text-slate-500 font-mono shrink-0 ml-2 max-md:landscape:hidden">Line {viz.activeLine + 1}</span>}
             </div>
           )}
         </section>
 
         {/* RIGHT: Code Panel */}
-        <aside className="w-[380px] bg-dark-900 flex flex-col shrink-0">
-          <div className="h-9 border-b border-white/5 flex items-center px-1 shrink-0">
+        <aside className="w-[380px] max-lg:landscape:w-[240px] max-md:landscape:w-[200px] bg-dark-900 flex flex-col shrink-0 mobile-right-panel">
+          <div className="h-9 max-lg:landscape:h-7 border-b border-white/5 flex items-center px-1 shrink-0">
             <button onClick={() => setRightPanel('code')}
               className={`flex-1 flex items-center justify-center gap-1 py-1 text-[10px] font-bold rounded transition ${rightPanel === 'code' ? 'bg-primary-600/20 text-primary-400' : 'text-slate-500 hover:text-white'}`}>
               <BookOpen size={11} /> View Code

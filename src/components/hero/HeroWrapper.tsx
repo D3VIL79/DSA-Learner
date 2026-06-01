@@ -103,7 +103,7 @@ export const HeroWrapper: React.FC = () => {
       <div className="absolute inset-0 hero-grid pointer-events-none" />
 
       {/* Radial glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary-600/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] max-lg:w-[350px] max-lg:h-[350px] bg-primary-600/15 rounded-full blur-[150px] max-lg:blur-[80px] pointer-events-none" />
       <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-accent-400/10 rounded-full blur-[120px] pointer-events-none animate-float" />
       <div className="absolute bottom-1/4 left-1/4 w-[350px] h-[350px] bg-[#c084fc]/10 rounded-full blur-[100px] pointer-events-none animate-float" style={{ animationDelay: '3s' }} />
 
@@ -111,14 +111,14 @@ export const HeroWrapper: React.FC = () => {
       <div className="z-10 text-center flex flex-col items-center gap-6 px-4">
         
         {/* Badge */}
-        <div ref={badgeRef} className="opacity-0 px-4 py-1.5 rounded-full glass text-xs font-semibold text-accent-400 tracking-widest uppercase mb-2">
+        <div ref={badgeRef} className="opacity-0 px-4 max-lg:landscape:px-3 py-1.5 max-lg:landscape:py-1 rounded-full glass text-xs max-lg:landscape:text-[10px] font-semibold text-accent-400 tracking-widest uppercase mb-2 max-lg:landscape:mb-1">
           ✨ Interactive Algorithm Learning Engine
         </div>
 
         {/* Title */}
         <h1 
           ref={titleRef} 
-          className="text-7xl md:text-[120px] font-black tracking-tighter text-gradient leading-none"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-[120px] font-black tracking-tighter text-gradient leading-none"
           style={{ perspective: '600px' }}
         >
           {t('hero.title')}
@@ -127,7 +127,7 @@ export const HeroWrapper: React.FC = () => {
         {/* Subtitle */}
         <p 
           ref={subtitleRef}
-          className="text-xl md:text-2xl text-slate-300/80 font-light tracking-wide max-w-xl opacity-0"
+          className="text-sm sm:text-lg md:text-xl lg:text-2xl text-slate-300/80 font-light tracking-wide max-w-xl opacity-0"
         >
           {t('hero.subtitle')}
         </p>
@@ -144,7 +144,7 @@ export const HeroWrapper: React.FC = () => {
         <button
           ref={btnRef}
           onClick={handleStart}
-          className="mt-6 group relative px-12 py-4 text-lg font-bold rounded-full overflow-hidden opacity-0 transition-transform hover:scale-105 active:scale-95"
+          className="mt-6 max-lg:landscape:mt-3 group relative px-12 max-lg:landscape:px-8 py-4 max-lg:landscape:py-2.5 text-lg max-lg:landscape:text-sm font-bold rounded-full overflow-hidden opacity-0 transition-transform hover:scale-105 active:scale-95"
         >
           {/* Gradient bg */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary-500 via-accent-400 to-primary-500 bg-[length:200%_100%] animate-shimmer" />

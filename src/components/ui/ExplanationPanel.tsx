@@ -22,7 +22,7 @@ export const ExplanationPanel: React.FC<ExplanationPanelProps> = ({ algorithmId 
   const progressPercent = steps.length > 0 ? Math.round((visibleHistory.length / steps.length) * 100) : 0;
 
   return (
-    <div className="flex flex-col h-full bg-dark-950 border-l border-slate-700 font-sans text-slate-300 shadow-2xl z-20 w-[450px]">
+    <div className="flex flex-col h-full bg-dark-950 border-l border-slate-700 font-sans text-slate-300 shadow-2xl z-20 w-full">
       {/* Header */}
       <div className="flex items-center justify-between p-4 bg-dark-900 border-b border-slate-700/50">
         <div className="flex items-center gap-2">

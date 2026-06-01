@@ -48,7 +48,7 @@ export const GraphVisualizer: React.FC<GraphVisualizerProps> = ({
     <div className="flex flex-col items-center gap-3 w-full relative">
       <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">🕸️ Graph Visualization</h4>
       
-      <div className="relative w-[300px] h-[300px] bg-dark-800/50 rounded-xl border border-slate-700/50">
+      <div className="relative w-[300px] h-[300px] max-lg:landscape:w-[200px] max-lg:landscape:h-[200px] bg-dark-800/50 rounded-xl border border-slate-700/50">
         <svg className="absolute inset-0 w-full h-full pointer-events-none">
           {/* Arrow marker definition for directed graphs */}
           <defs>

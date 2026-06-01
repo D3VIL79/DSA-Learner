@@ -24,7 +24,7 @@ export const StackQueueVisualizer: React.FC<StackQueueVisualizerProps> = ({
 
         <div className="relative flex flex-col items-center">
           {/* Stack container frame */}
-          <div className="relative flex flex-col-reverse items-center gap-1 min-h-[200px] w-48 border-l-2 border-r-2 border-b-2 border-slate-600 rounded-b-lg p-2 pt-4 bg-dark-800/50">
+          <div className="relative flex flex-col-reverse items-center gap-1 min-h-[200px] max-lg:landscape:min-h-[140px] w-48 max-lg:landscape:w-36 border-l-2 border-r-2 border-b-2 border-slate-600 rounded-b-lg p-2 pt-4 bg-dark-800/50">
             
             {/* Top pointer */}
             {data.length > 0 && (
@@ -118,7 +118,7 @@ export const StackQueueVisualizer: React.FC<StackQueueVisualizerProps> = ({
                   exit={{ opacity: 0, scale: 0.3, x: -40 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                   className={`
-                    w-14 h-14 flex items-center justify-center rounded-lg
+                    w-14 h-14 max-lg:landscape:w-10 max-lg:landscape:h-10 flex items-center justify-center rounded-lg
                     font-mono font-bold text-base transition-all duration-300
                     ${isHighlighted
                       ? 'bg-accent-400 text-dark-950 shadow-[0_0_20px_rgba(34,211,238,0.5)]'

@@ -90,7 +90,7 @@ export const TreeVisualizer: React.FC<TreeVisualizerProps> = ({ data, activeIndi
   }, [data, nodes, activeIndices, treeK]);
 
   return (
-    <div className="relative w-full max-w-[800px] h-[400px] flex justify-center items-start mt-8">
+    <div className="relative w-full max-w-[800px] max-lg:landscape:max-w-[500px] h-[400px] max-lg:landscape:h-[220px] flex justify-center items-start mt-8 max-lg:landscape:mt-2">
       <svg className="absolute inset-0 w-full h-full pointer-events-none">
         {edges.map((edge) => (
           <motion.line

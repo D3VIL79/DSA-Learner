@@ -46,7 +46,7 @@ export const GridVisualizer: React.FC<GridVisualizerProps> = ({
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: isActive || isComparing ? 1.1 : 1 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className={`w-12 h-12 flex items-center justify-center border rounded-md font-mono text-sm font-bold transition-colors ${bgClass}`}
+                  className={`w-12 h-12 max-lg:landscape:w-8 max-lg:landscape:h-8 max-lg:landscape:text-xs flex items-center justify-center border rounded-md font-mono text-sm font-bold transition-colors ${bgClass}`}
                 >
                   <AnimatePresence mode="popLayout">
                     <motion.span
